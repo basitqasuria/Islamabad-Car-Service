@@ -1,0 +1,88 @@
+
+.card {
+  height: 100%;
+  padding: 30px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  transition: transform 0.35s ease, box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(249, 115, 22, 0.4);
+  box-shadow: var(--shadow-md);
+}
+
+.iconWrapper {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 25px;
+  border-radius: 15px;
+  color: var(--color-primary);
+  background: rgba(249, 115, 22, 0.1);
+  transition: background 0.3s ease, color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.card:hover .iconWrapper {
+  background: var(--color-primary);
+  color: var(--color-white);
+  transform: scale(1.08) rotate(-5deg);
+}
+
+.title {
+  margin-bottom: 12px;
+  color: var(--color-dark);
+  font-family: var(--font-heading);
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.description {
+  min-height: 75px;
+  color: var(--color-muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-primary);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.cardFooter svg {
+  transition: transform 0.3s ease;
+}
+
+.card:hover .cardFooter svg {
+  transform: translate(4px, -4px);
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 24px;
+  }
+
+  .description {
+    min-height: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .iconWrapper,
+  .cardFooter svg {
+    transition: none;
+  }
+}

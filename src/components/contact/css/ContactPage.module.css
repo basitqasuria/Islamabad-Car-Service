@@ -1,0 +1,139 @@
+
+.page {
+  min-height: 60vh;
+  background: var(--color-bg);
+}
+
+.intro {
+  padding: 75px 0 55px;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.eyebrow {
+  color: var(--color-primary);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.intro h1 {
+  margin-top: 12px;
+  font-size: clamp(34px, 5vw, 46px);
+  letter-spacing: -1.5px;
+}
+
+.intro p {
+  max-width: 520px;
+  margin-top: 13px;
+  color: var(--color-muted);
+  font-size: 15px;
+}
+
+.contactSection {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: start;
+  gap: 24px;
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contactCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 17px;
+  padding: 23px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.contactCard > svg,
+.locationCard > svg {
+  flex-shrink: 0;
+  color: var(--color-primary);
+}
+
+.contactCard h2,
+.locationCard h2 {
+  margin-bottom: 7px;
+  font-size: 17px;
+}
+
+.contactCard p,
+.locationCard p {
+  color: var(--color-muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.contactCard a {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--color-primary);
+  font-size: 14px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.contactCard a:hover {
+  color: var(--color-primary-hover);
+}
+
+.locationCard {
+  padding: 28px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.locationCard h2 {
+  margin-top: 17px;
+}
+
+.locationCard p + p {
+  margin-top: 12px;
+}
+
+@media (max-width: 768px) {
+  .intro {
+    padding: 55px 0 40px;
+  }
+
+  .contactSection {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding-top: 35px;
+    padding-bottom: 55px;
+  }
+
+  .contactCard,
+  .locationCard {
+    padding: 20px;
+  }
+}
+
+
+@media (hover: hover) {
+  .contactCard,
+  .locationCard {
+    transition:
+      transform 250ms ease,
+      border-color 250ms ease,
+      box-shadow 250ms ease;
+  }
+
+  .contactCard:hover,
+  .locationCard:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-primary);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  }
+}
